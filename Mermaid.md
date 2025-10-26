@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
     subgraph Sources
         A[Application Pods\n(stdout, files, HTTP)]
@@ -41,18 +42,4 @@ flowchart TD
     E --> I
     F --> I
     H --> I
-
-    %% Styling
-    classDef source fill:#e6f3ff,stroke:#333;
-    classDef agent fill:#d4f1e5,stroke:#333;
-    classDef agg fill:#fff8dc,stroke:#333;
-    classDef dest fill:#f0e6ff,stroke:#333;
-    classDef analytics fill:#ffe6e6,stroke:#333;
-    classDef ui fill:#fff0e6,stroke:#333;
-
-    class A source
-    class B,C agent
-    class D agg
-    class E,F,G dest
-    class H analytics
-    class I ui
+```
