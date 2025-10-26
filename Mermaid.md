@@ -1,30 +1,30 @@
 ```mermaid
 flowchart TD
     subgraph Sources
-        A[Application Pods\n(stdout, files, HTTP)]
+        A[Application Pods (stdout, files, HTTP)]
     end
 
     subgraph EdgeAgents
-        B[Fluent Bit\n(DaemonSet)\n- lightweight\n- tail files]
-        C[Vector\n(sidecar / host)\n- parsing\n- enrichment\n- routing]
+        B[Fluent Bit (DaemonSet) - lightweight - tail files]
+        C[Vector (sidecar / host) - parsing - enrichment - routing]
     end
 
     subgraph AggregationLayer
-        D[Vector\n(Aggregator)\n- disk buffering\n- deduplication\n- dynamic routing\n- observability]
+        D[Vector (Aggregator) - disk buffering - deduplication - dynamic routing - observability]
     end
 
     subgraph Destinations
-        E[Loki\n(logs)\n- labels\n- compaction]
-        F[Elasticsearch\n(full-text, ML)\n- index templates\n- anomaly detection]
-        G[Kafka\n(buffering tier)\n- replayable\n- decoupling]
+        E[Loki (logs) - labels - compaction]
+        F[Elasticsearch (full-text, ML) - index templates - anomaly detection]
+        G[Kafka (buffering tier) - replayable - decoupling]
     end
 
     subgraph Analytics
-        H[ClickHouse\n(analytics)\n- Kafka Engine\n- materialized views]
+        H[ClickHouse (analytics) - Kafka Engine - materialized views]
     end
 
     subgraph UI
-        I[Grafana\n(Unified UI)\n- Loki logs\n- ES dashboards\n- CH panels]
+        I[Grafana (Unified UI) - Loki logs - ES dashboards - CH panels]
     end
 
     %% Connections
